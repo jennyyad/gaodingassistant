@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>稿定创作助手 · 模板共创活动</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23667eea'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='16' fill='white'%3E%F0%9F%8E%A8%3C/text%3E%3C/svg%3E" />
+  <script>
+    // 自动修复损坏的 localStorage 数据
+    (function() {
+      var taskKeys = ['gd_tasks', 'gd_monthly_tasks', 'gd_task_records', 'gd_task_templates'];
+      taskKeys.forEach(function(key) {
+        try {
+          var raw = localStorage.getItem(key);
+          if (raw) {
+            JSON.parse(raw);
+          }
+        } catch (e) {
+          console.warn('[修复] 清除损坏的 localStorage key:', key, e.message);
+          localStorage.removeItem(key);
+        }
+      });
+      // 同时检查 gd_tools 和 gd_bookmarks
+      var otherKeys = ['gd_tools', 'gd_bookmarks', 'gd_custom_events', 'gd_prompt_library', 'gd_prompt_categories'];
+      otherKeys.forEach(function(key) {
+        try {
+          var raw = localStorage.getItem(key);
+          if (raw) {
+            JSON.parse(raw);
+          }
+        } catch (e) {
+          console.warn('[修复] 清除损坏的 localStorage key:', key, e.message);
+          localStorage.removeItem(key);
+        }
+      });
+    })();
+  </script>
+  <script type="module" src="./assets/index-CjjqvN0r.js"></script>
+  <link rel="stylesheet" href="./assets/index--SZbPah0.css">
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
